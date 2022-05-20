@@ -17,8 +17,16 @@ from xml.etree.ElementInclude import include
 from django.contrib import admin
 from django.urls import path,include
 
+from accounts.views import login_view
+from polls.views import index
+from pageadmin.views import page
+from Fast_Food.views import home_view
 urlpatterns = [
-    path('polls/',include('polls.urls')),
-    path('pageadmin/',include('pageadmin.urls')),
+    path('polls/',index),
+    path('pageadmin/',page),
+    path('login/', login_view),
+    path('', home_view),
     path('admin/', admin.site.urls)
+    
+    
 ]
