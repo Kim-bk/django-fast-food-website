@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
     'accounts.apps.AccountsConfig',
+    'loadimg.apps.LoadimgConfig',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -77,13 +81,13 @@ WSGI_APPLICATION = 'Fast_Food.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'FastFood',
-        'USER': "sa",
-        'PASSWORD': "sa",
-        'HOST':'',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fastfood',
+        'USER': "root",
+        'PASSWORD': "",
+        'HOST':'localhost',
         'PORT':'',
-        'OPTIONS':{"driver":"ODBC Driver 17 for SQL Server"},
+        #'OPTIONS':{"driver":"ODBC Driver 17 for SQL Server"},
     }
 }
 
@@ -128,3 +132,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_REDIRECT_URL ='home'

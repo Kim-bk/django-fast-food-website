@@ -1,0 +1,300 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+<div class="row_main">
+    <div id="sidebar" class="sidebar wap_nav_scroller">
+        <div class="sidebar__inner wap_nav_fix">
+            <div class="nav-scroller">
+                <ul class="nav d-flex justify-content-start mb-0">
+                    <li class="nav-item" id="headerMenuCate-14">
+                        <a href="{% url 'home' %}" class="nav-link"><span>Combo 1 Người</span></a>
+                    </li>
+                    <li class="nav-item" id="headerMenuCate-15">
+                        <a href="{% url 'list_food_nhom' %}" class="nav-link"><span>Combo Nhóm</span></a>
+                    </li>
+                    <li class="nav-item" id="headerMenuCate-13">
+                        <a href="{% url 'list_food_uu_dai' %}" class="nav-link"><span>Menu Ưu Đãi</span></a>
+                    </li>
+                    <li class="nav-item" id="headerMenuALaCarte">
+                    </li>
+                </ul>
+            </div>
+            <div class="deliver_wap">
+                <div class="ml-auto deliver_box d-flex justify-content-between align-items-lg-center align-items-end">
+                    <div class="cot_left row no-gutters set_deliver_hover">
+                        <div class="col-12 col-lg-auto deliver_light">
+                            <span>Giao hàng đến:</span>
+                        </div>
+                        <div class="col-12 col-lg-auto deliver_bold">
+                            <span title="Đà Nẵng">Đà Nẵng</span>
+                        </div>
+                    </div>
+                    <div class="cot_right">
+                        <div class="clearfix deliver_bold"><a href=""><span>Thay đổi <i class="fas fa-chevron-right"></i></span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+<section id="homepage">
+<div class="container">
+    <div class="banner_slider mb-0">
+        <div class="item">
+            <img src="{% static 'loadimg/img/anh1.jpg' %}" />
+        </div>
+        <div class="item">
+            <img src="{% static 'loadimg/img/anh2.jpg' %}" />
+        </div>
+        <div class="item">
+            <img src="{% static 'loadimg/img/anh3.jpg' %}" />
+        </div>
+    </div>
+    <div class="box_homepage">
+    <div class="row no-gutters">
+        <div class="col-left col-lg-3 set_fixed">
+            <div>
+                <div class="nav_menu_header pc">
+                    <span>Combo 1 Người</span>
+                </div>
+                <div id="nav_menu" class="">
+                    <nav class="nav" id="menuList">
+                        <a href="Combo1Nguoi.html" class="nav-link active"><span>Tất cả</span></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="col-right col-lg-9" id="menuContent">
+            <div class="row_sp">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <h2 class="post-title pc">
+                            <span>Combo 1 Người</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="kfc_menu_list pc">
+                <div class="row_sp">
+                    <div class="row no-gutters">
+                        <div class="col-6 col-lg-4">
+                            <div class="card ">
+                                <div class="sp_slider">
+                                    <img src="{% static 'loadimg/img/Ga_ran.jpg' %}" class="card-img-top" alt="COMBO GÀ RÁN A">
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><span>COMBO GÀ RÁN A</span></h5>
+                                    <h6 class="card-price"><span>77<small>.000đ</small></span><em class="old_price">79<small>.000đ</small></em></h6>
+                                    <div class="card-text">
+                                        <span>
+                                            <ul>
+                                                <li>2 Miếng Gà Giòn Cay / 2 Miếng Gà Giòn Không Cay / 2 Miếng Gà Truyền thống</li>
+                                                <li>1 Pepsi Lon</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <a class="btn_expand"><i class="fal fa-angle-down"></i></a>
+                                    <div class="row_btn">
+                                        <div class="row no-gutters">
+                                            <div class="col order-lg-1">
+                                                <a href="javascript:void(0);" class="button btn_custom" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/100/combo-ga-ran-a.html');"><span>Tùy chỉnh</span></a>
+                                            </div>
+                                            <div class="col order-lg-2">
+                                                <a href="javascript:void(0);" class="button btn_add" onclick="addDefaultToCart(100,1);"><span>Đặt hàng</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <div class="card ">
+                                <div class="sp_slider">
+                                    <a href="javascript:void(0);" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/102/combo-ga-ran-b.html');">
+                                        <img src="https://kfcvietnam.com.vn/uploads/combo/7d36d8d380315c169ba830b0b5b4c26d.jpg" class="card-img-top" alt="COMBO GÀ RÁN B">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><span>COMBO GÀ RÁN B</span></h5>
+                                    <h6 class="card-price"><span>77<small>.000đ</small></span><em class="old_price">79<small>.000đ</small></em></h6>
+                                    <div class="card-text">
+                                        <span>
+                                            <ul>
+                                                <li>1 Phần Hot Wings 3 Miếng</li>
+                                                <li>1 Khoai Tây Chiên (Lớn)</li>
+                                                <li>1 Pepsi Lon</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <a class="btn_expand"><i class="fal fa-angle-down"></i></a>
+                                    <div class="row_btn">
+                                        <div class="row no-gutters">
+                                            <div class="col order-lg-1">
+                                                <a href="javascript:void(0);" class="button btn_custom" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/102/combo-ga-ran-b.html');"><span>Tùy chỉnh</span></a>
+                                            </div>
+                                            <div class="col order-lg-2">
+                                                <a href="javascript:void(0);" class="button btn_add" onclick="addDefaultToCart(102,1);"><span>Đặt hàng</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <div class="card ">
+                                <div class="sp_slider">
+                                    <a href="javascript:void(0);" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/104/combo-ga-ran-c.html');">
+                                        <img src="https://kfcvietnam.com.vn/uploads/combo/c94db21b4ac5ab7333300f3f7e78671e.jpg" class="card-img-top" alt="COMBO GÀ RÁN C">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><span>COMBO GÀ RÁN C</span></h5>
+                                    <h6 class="card-price"><span>83<small>.000đ</small></span><em class="old_price">85<small>.000đ</small></em></h6>
+                                    <div class="card-text">
+                                        <span>
+                                            <ul>
+                                                <li>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền Thống</li>
+                                                <li>1 Burger Tôm</li>
+                                                <li>1 Pepsi Lon</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <a class="btn_expand"><i class="fal fa-angle-down"></i></a>
+                                    <div class="row_btn">
+                                        <div class="row no-gutters">
+                                            <div class="col order-lg-1">
+                                                <a href="javascript:void(0);" class="button btn_custom" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/104/combo-ga-ran-c.html');"><span>Tùy chỉnh</span></a>
+                                            </div>
+                                            <div class="col order-lg-2">
+                                                <a href="javascript:void(0);" class="button btn_add" onclick="addDefaultToCart(104,1);"><span>Đặt hàng</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-6 col-lg-4">
+                            <div class="card ">
+                                <div class="sp_slider">
+                                    <a href="javascript:void(0);" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/105/combo-ga-ran-d.html');">
+                                        <img src="https://kfcvietnam.com.vn/uploads/combo/f7e98746a52f1e24dbbe663be0ade3e0.jpg" class="card-img-top" alt="COMBO GÀ RÁN D">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><span>COMBO GÀ RÁN D</span></h5>
+                                    <h6 class="card-price"><span>87<small>.000đ</small></span><em class="old_price">89<small>.000đ</small></em></h6>
+                                    <div class="card-text">
+                                        <span>
+                                            <ul>
+                                                <li>1 Miếng Gà Giòn Cay / 1 Miếng Gà Giòn Không Cay / 1 Miếng Gà Truyền Thống</li>
+                                                <li>1 Burger Gà Quay Flava / 1 Burger Zinger</li>
+                                                <li>1 Pepsi Lon</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <a class="btn_expand"><i class="fal fa-angle-down"></i></a>
+                                    <div class="row_btn">
+                                        <div class="row no-gutters">
+                                            <div class="col order-lg-1">
+                                                <a href="javascript:void(0);" class="button btn_custom" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/105/combo-ga-ran-d.html');"><span>Tùy chỉnh</span></a>
+                                            </div>
+                                            <div class="col order-lg-2">
+                                                <a href="javascript:void(0);" class="button btn_add" onclick="addDefaultToCart(105,1);"><span>Đặt hàng</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <div class="card ">
+                                <div class="sp_slider">
+                                    <a href="javascript:void(0);" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/107/combo-com-b.html');">
+                                        <img src="https://kfcvietnam.com.vn/uploads/combo/c72217be125e9ff11818a7cdce0b0a06.jpg" class="card-img-top" alt="COMBO CƠM B">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><span>COMBO CƠM B</span></h5>
+                                    <h6 class="card-price"><span>87<small>.000đ</small></span><em class="old_price">89<small>.000đ</small></em></h6>
+                                    <div class="card-text">
+                                        <span>
+                                            <ul>
+                                                <li>1 Cơm Gà Giòn Cay / 1 Cơm Gà Giòn Không Cay / 1 Cơm Gà Truyền Thống / 1 Cơm Phi-lê Gà Quay Flava / 1 Cơm Phi-lê Gà Quay Tiêu / 1 Cơm Phi-lê Gà Giòn / 1 Cơm Gà Xiên Que</li>
+                                                <li>1 Miếng Gà Giòn Cay / 1 Miếng Gà Truyền Thống / 1 Miếng Gà Giòn Không Cay</li>
+                                                <li>1 Pepsi Lon</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <a class="btn_expand"><i class="fal fa-angle-down"></i></a>
+                                    <div class="row_btn">
+                                        <div class="row no-gutters">
+                                            <div class="col order-lg-1">
+                                                <a href="javascript:void(0);" class="button btn_custom" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/107/combo-com-b.html');"><span>Tùy chỉnh</span></a>
+                                            </div>
+                                            <div class="col order-lg-2">
+                                                <a href="javascript:void(0);" class="button btn_add" onclick="addDefaultToCart(107,1);"><span>Đặt hàng</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <div class="card ">
+                                <div class="sp_slider">
+                                    <a href="javascript:void(0);" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/109/combo-com-c.html');">
+                                        <img src="https://kfcvietnam.com.vn/uploads/combo/e72b0f625bc005513f52779da65c37df.jpg" class="card-img-top" alt="COMBO CƠM C">
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><span>COMBO CƠM C</span></h5>
+                                    <h6 class="card-price"><span>92<small>.000đ</small></span><em class="old_price">95<small>.000đ</small></em></h6>
+                                    <div class="card-text">
+                                        <span>
+                                            <ul>
+                                                <li>1 Cơm Gà Giòn Cay / 1 Cơm Gà Giòn Không Cay / 1 Cơm Gà Truyền Thống / 1 Cơm Phi-lê Gà Quay Flava / 1 Cơm Phi-lê Gà Quay Tiêu / 1 Cơm Phi-lê Gà Giòn / 1 Cơm Gà Xiên Que</li>
+                                                <li>1 Burger Gà Quay Flava / 1 Burger Zinger</li>
+                                                <li>1 Pepsi Lon</li>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                    <a class="btn_expand"><i class="fal fa-angle-down"></i></a>
+                                    <div class="row_btn">
+                                        <div class="row no-gutters">
+                                            <div class="col order-lg-1">
+                                                <a href="javascript:void(0);" class="button btn_custom" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/109/combo-com-c.html');"><span>Tùy chỉnh</span></a>
+                                            </div>
+                                            <div class="col order-lg-2">
+                                                <a href="javascript:void(0);" class="button btn_add" onclick="addDefaultToCart(109,1);"><span>Đặt hàng</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bigorder_appstore">
+                    <div class="row">
+                        <div class="col-12 col-lg-6 left_banner">
+                            <div class="clearfix">
+                                <div class="main_link">
+                                    <img src="{% static 'loadimg/img/anhpr1.png' %}" />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="col-12 col-lg-6 right_banner">
+                            <div class="clearfix">
+                                <div class="main_link">
+                                    <img style="padding-top:30px;" src="{% static 'loadimg/img/anhpr2.png' %}" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+{%endblock content%}
