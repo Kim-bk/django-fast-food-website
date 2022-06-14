@@ -6,8 +6,6 @@ from django.views import View
 class FoodView(View):
     def get(self,request):
         return render(request,'loadimg/Combo1Nguoi.html')
-    def replace(request):
-        return render(request,'loadimg/Combo1Nguoi.html')
 class FoodNhom(View):
     def get(self,request):
         return render(request,'loadimg/ComboNhom.html')
