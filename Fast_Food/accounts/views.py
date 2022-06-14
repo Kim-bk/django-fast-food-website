@@ -3,8 +3,9 @@ from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
-from flask import redirect
-# Create your views here.
+from loadimg.views import FoodView
+from django.shortcuts import redirect
+
 from .form import CreateUserForm
 
 def login_view(request):
@@ -15,7 +16,7 @@ def login_view(request):
                                     password=password)
         if user is not None:
             login(request,user)
-            return render(request, "login.html",{})
+            return redirect('home')
     return render(request, "login.html",{})
 
 def logout_view(request):
@@ -29,6 +30,8 @@ def register_view(request):
             form.save()
             user = form.cleaned_data.get('username')
             messages.success(request,'Tài khoản '+ user +' đăng ký thành công !')
-    
+            return redirect('login')
+        else:
+            form = CreateUserForm(request.POST)
     context = {'form':form}
     return render(request, 'register.html',context)

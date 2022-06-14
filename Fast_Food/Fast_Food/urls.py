@@ -17,20 +17,10 @@ from xml.etree.ElementInclude import include
 from django.contrib import admin
 from django.urls import path,include
 
-from accounts.views import login_view,register_view
-from polls.views import index
-from pageadmin.views import page
-from Fast_Food.views import combonhom_view,combomotnguoi_view,MenuUuDai_view
 
 urlpatterns = [
-    path('polls/',index),
-    path('pageadmin/',page),
-    path('login/', login_view),
-    path('register/', register_view),
-    path('', combonhom_view),
-    path('Combo1Nguoi/',combomotnguoi_view),
-    path('MenuUuDai/',MenuUuDai_view),
+    path('', include('loadimg.urls')),
+    path('',include('accounts.urls')),
     path('admin/', admin.site.urls)
-    
     
 ]
