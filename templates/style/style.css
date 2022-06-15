@@ -152,7 +152,7 @@ a {
 
 header {
     background-color: #fff;
-    padding: 2rem;
+    padding: 1.5rem;
     box-shadow: 0px 0px 20px rgba(0,0,0, 0.2);
     width: 100%;
     z-index: 10;
@@ -473,7 +473,7 @@ header.header-up {
 }
 
 .user-dropdown a {
-    color: #1B8BCC;
+    color: #e5a314;
 }
 
 .user-dropdown::before {
@@ -501,7 +501,7 @@ header.header-up {
 }
 
 .user-dropdown .logout {
-    color: #1B8BCC;
+    color: #e5a314;
     font-weight: 300;
     margin-top: 1rem;
     cursor: pointer;
@@ -1639,7 +1639,7 @@ select::-ms-expand {
 .user-infor-left__header p {
     font-size: 1.6rem;
     font-weight: 500;
-    color: #1B8BCC;
+    color: #e5a314;
 }
 
 .user-ctrl {
@@ -1666,15 +1666,15 @@ select::-ms-expand {
 }
 
 .user-ctrl__item.active {
-    background-color: #1B8BCC;
+    background-color: #e5a314;
     color: white;
-    border-color: #1B8BCC;
+    border-color: #e5a314;
 }
 
 .user-ctrl__item:hover {
-    background-color: #1B8BCC;
+    background-color: #e5a314;
     color: white;
-    border-color: #1B8BCC;
+    border-color: #e5a314;
 }
 
 .user-infor-right {
@@ -1702,7 +1702,7 @@ select::-ms-expand {
 .user-infor-detail__item > p {
     font-size: 1.6rem;
     font-weight: 500;
-    color: #1B8BCC;
+    color: #e5a314;
 }
 
 .user-infor-detail__item > span {
