@@ -1657,9 +1657,9 @@ html[lang="en"] #popup_Signin h5 {
     display: block;
 }
 .row_btn .button.btn_add {
-    background-color: #ffc107;
-    border-color: #ffc107;
-    color: #fff;
+    background-color: #f5bf48;
+    color: white;
+    border-color: #f5bf48;
 }
 .sp_slider {
     position: relative;
