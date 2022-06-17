@@ -8,6 +8,7 @@ class Food(models.Model):
     Id_Category = models.IntegerField()
     Food_Name = models.TextField()
     Description = models.TextField()
-    Price = models.IntegerField()
+    Price = models.FloatField()
+    Old_Price = models.FloatField()
     Image = models.ImageField(upload_to = "")
     Quantity = models.IntegerField()
