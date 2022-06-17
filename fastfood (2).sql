@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 17, 2022 lúc 09:35 AM
+-- Thời gian đã tạo: Th6 17, 2022 lúc 07:59 PM
 -- Phiên bản máy phục vụ: 10.4.21-MariaDB
 -- Phiên bản PHP: 8.0.10
 
@@ -97,7 +97,15 @@ INSERT INTO `auth_permission` (`id`, `name`, `content_type_id`, `codename`) VALU
 (33, 'Can add tb food', 9, 'add_tbfood'),
 (34, 'Can change tb food', 9, 'change_tbfood'),
 (35, 'Can delete tb food', 9, 'delete_tbfood'),
-(36, 'Can view tb food', 9, 'view_tbfood');
+(36, 'Can view tb food', 9, 'view_tbfood'),
+(37, 'Can add tb order', 10, 'add_tborder'),
+(38, 'Can change tb order', 10, 'change_tborder'),
+(39, 'Can delete tb order', 10, 'delete_tborder'),
+(40, 'Can view tb order', 10, 'view_tborder'),
+(41, 'Can add tb order detail', 11, 'add_tborderdetail'),
+(42, 'Can change tb order detail', 11, 'change_tborderdetail'),
+(43, 'Can delete tb order detail', 11, 'delete_tborderdetail'),
+(44, 'Can view tb order detail', 11, 'view_tborderdetail');
 
 -- --------------------------------------------------------
 
@@ -118,6 +126,13 @@ CREATE TABLE `auth_user` (
   `is_active` tinyint(1) NOT NULL,
   `date_joined` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `auth_user`
+--
+
+INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
+(1, 'pbkdf2_sha256$320000$wzqcbHOqYtdvbJmvXsboCh$CVW2ujdo7PJyPl53TQ+SwCJD3ugTzB2OaplYj14ldfk=', '2022-06-17 16:19:01.431857', 0, 'dat', 'Đinh', 'Đạt', 'datd789@gmail.com', 0, 1, '2022-06-17 15:36:21.355700');
 
 -- --------------------------------------------------------
 
@@ -177,6 +192,8 @@ CREATE TABLE `django_content_type` (
 --
 
 INSERT INTO `django_content_type` (`id`, `app_label`, `model`) VALUES
+(10, 'accounts', 'tborder'),
+(11, 'accounts', 'tborderdetail'),
 (1, 'admin', 'logentry'),
 (3, 'auth', 'group'),
 (2, 'auth', 'permission'),
@@ -237,6 +254,13 @@ CREATE TABLE `django_session` (
   `session_data` longtext NOT NULL,
   `expire_date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `django_session`
+--
+
+INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
+('rcte3lshy8hdmzm2al0pyr7a6kzz7ubw', '.eJxVjMsOwiAQRf-FtSG8EZfu_QYCM4NUDSSlXRn_3TbpQrfnnHvfLKZ1qXEdNMcJ2YVJdvplOcGT2i7wkdq9c-htmafM94QfdvBbR3pdj_bvoKZRt3UxUlgBSMqDcCVAIhWkQw_KWFQuZFSimLRh0tmRJOm802dbgHQQgn2-65I39w:1o2EgX:c555fYa5H2FDXlO2YZddPrJ1s_wNfvY8rgS_VKyPLeo', '2022-07-01 16:19:01.490825');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -335,13 +359,13 @@ ALTER TABLE `auth_group_permissions`
 -- AUTO_INCREMENT cho bảng `auth_permission`
 --
 ALTER TABLE `auth_permission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT cho bảng `auth_user`
 --
 ALTER TABLE `auth_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `auth_user_groups`
@@ -365,7 +389,7 @@ ALTER TABLE `django_admin_log`
 -- AUTO_INCREMENT cho bảng `django_content_type`
 --
 ALTER TABLE `django_content_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `django_migrations`

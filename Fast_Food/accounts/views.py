@@ -5,9 +5,10 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from loadimg.views import FoodView
 from django.shortcuts import redirect
+from .models import tbOrder
 
 from .form import CreateUserForm
-
+from .form import UpdateUserForm
 def login_view(request):
     if request.method =="POST":
         username = request.POST.get("username")
@@ -17,13 +18,17 @@ def login_view(request):
         if user is not None:
             login(request,user)
             return redirect('home')
+        else:
+            messages.warning(request,'Sai tài khoản hoặc mật khẩu')
+            return redirect('login')
     return render(request, "login.html",{})
 
 def logout_view(request):
-    return render(request, "logout.html",{})
+    logout(request)
+    return redirect('home')
 
 def register_view(request):
-    form = CreateUserForm()
+    form = CreateUserForm
     if request.method =="POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
@@ -35,3 +40,17 @@ def register_view(request):
             form = CreateUserForm(request.POST)
     context = {'form':form}
     return render(request, 'register.html',context)
+
+def profile_view(request):
+    if request.method =="POST":
+        form = UpdateUserForm(request.POST,instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    form = UpdateUserForm(instance=request.user)
+    context = {'form':form}
+    return render(request,"profile.html",context)
+def orderview(request):
+    list_question = tbOrder.objects.all()
+    context = {"list_order":list_question}
+    return render(request,'accounts/order_user.html',context)

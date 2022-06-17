@@ -1,0 +1,124 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Đăng nhập | KDC</title>
+	<!-- Stylesheets -->
+	<link href="{% static 'loadimg/css/bootstrap.css' %}" rel="stylesheet">
+	<link href="{% static 'loadimg/css/main.css' %}" rel="stylesheet">
+	<link href="{% static 'loadimg/css/responsive.css' %}" rel="stylesheet">
+	<link rel="icon" href="{% static 'loadimg/img/logo.png' %}" type="image/x-icon">
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Titillium+Web:wght@300;400;600;700;900&display=swap"
+		rel="stylesheet">
+	
+	<!-- Responsive -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+<body>
+	<div class="first-body">
+		<div class="logo">
+            <a href="index.html"><img src="{% static 'loadimg/img/logo.png' %}"/></a>
+			
+		</div>
+		</div>  
+
+	<div class="page-wrapper">
+
+		<!-- Preloader -->
+		<div class="preloader"></div>
+
+
+		<!-- End Main Header -->
+
+
+		<!--End Page Title-->
+
+		<!-- Login Section -->
+		<section class="login-section">
+			<div class="auto-container">
+				<div class="login-box">
+	<div class="title-box">
+		<h2>Đăng ký</h2>
+	</div>
+	<div class="styled-form">
+		<form method="POST" action="">
+			{% csrf_token%}
+			<div class="form-group">
+				<label>Tên tài khoản</label>
+				{{form.username}}
+			</div>
+			<div class="form-group">
+				<label>Email</label>
+				{{form.email}}
+			</div>
+			<div class="form-group">
+				<label>Mật khẩu</label>
+				{{form.password1}}
+			</div>
+			<div class="form-group">
+				<label>Xác nhận lại mật khẩu</label>
+				{{form.password2}}
+			</div>
+		
+			<div class="form-group text-center">
+				<button type="submit" class="theme-btn btn-style-three"><span class="txt">Đăng ký <i
+							class="fa fa-angle-right"></i></span></button>
+			</div>
+			{{form.errors}}
+			
+			<div style="position:relative;">
+				<hr style="height:1px;border:none;color:#333;background-color:#333;"/>
+				<div class="or" >
+					<span class="txt" style="padding-left:47%; font-size: 16px; font-weight: bold;">hoặc</span>
+				</div>
+				
+			</div>
+		
+			<div class="another-choices" style="margin-top:10px;">
+				<button type="button" class="btn-another">
+					<img src="{% static 'loadimg/img/icons/google.png' %}" height="40px" width="40px" style="text-align:left">
+					<span class="txt" style="padding-left:60px">Đăng ký bằng tài khoản Google</span>
+		
+				 
+				</button>
+				<button type="button" class="btn-another">
+					<img src="{% static 'loadimg/img/icons/fb.png' %}" height="40px" width="40px">
+						<span class="txt"style="padding-left:50px">Đăng ký bằng tài khoản Facebook</span>
+
+					
+				</button>
+			</div>
+			<div class="form-group">
+				<div class="users">Bạn đã có tài khoản? <a href="{% url 'login' %}">Đăng nhập</a></div>
+			</div>
+		</form>
+	</div>
+
+</div>
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-circle-up"></span></div>
+
+	<script src="{% static 'loadimg/js/jquery.js' %}"></script>
+	<script src="{% static 'loadimg/js/popper.min.js' %}"></script>
+	<script src="{% static 'loadimg/js/jquery.scrollTo.js' %}"></script>
+	<script src="{% static 'loadimg/js/bootstrap.min.js'%}"></script>
+	<script src="{% static 'loadimg/js/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+	<script src="{% static 'loadimg/js/jquery.fancybox.js'%}"></script>
+	<script src="{% static 'loadimg/js/appear.js'%}"></script>
+	<script src="{% static 'loadimg/js/swiper.min.js'%}"></script>
+	<script src="{% static 'loadimg/js/element-in-view.js'%}"></script>
+	<script src="{% static 'loadimg/js/jquery.paroller.min.js'%}"></script>
+	<script src="{% static 'loadimg/js/parallax.min.js'%}"></script>
+	<script src="{% static 'loadimg/js/tilt.jquery.min.js'%}"></script>
+	<!--Master Slider-->
+	<script src="{% static 'loadimg/js/jquery.easing.min.js'%}"></script>
+	<script src="{% static 'loadimg/js/owl.js' %}"></script>
+	<script src="{% static 'loadimg/js/wow.js'%}"></script>
+	<script src="{% static 'loadimg/js/jquery-ui.js'%}"></script>
+	<script src="{% static 'loadimg/js/script.js'%}"></script>
