@@ -2,8 +2,9 @@ from django.urls import path
 from .views import FoodView
 from .views import FoodNhom
 from .views import UuDai
+from . import views
 urlpatterns = [
-    path('', FoodView.as_view(), name= 'home'),
-    path('cbnhom/', FoodNhom.as_view(), name= 'list_food_nhom'),
-    path('uudai/', UuDai.as_view(), name= 'list_food_uu_dai'),
+    path('', views.question,name= 'question'),
+    path('cbnhom/', views.question_nhom,name= 'question_nhom'),
+    path('uudai/', views.question_uudai,name= 'question_uudai'),
 ]
