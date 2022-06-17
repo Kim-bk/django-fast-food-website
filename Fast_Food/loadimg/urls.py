@@ -1,7 +1,4 @@
 from django.urls import path
-from .views import FoodView
-from .views import FoodNhom
-from .views import UuDai
 from . import views
 urlpatterns = [
     path('', views.question,name= 'question'),
