@@ -43,7 +43,7 @@
                             <a class="navbar-brand">
                                 <img class="pc" src="{% static 'loadimg/img/logo.png' %}">
                             </a>
-                            <h4 style="margin-left:17%; font-size:2.0rem; font-style: italic; font-weight:bold">The best choices for you!</h4>
+                            <h4 style="margin-left:10%; font-size:2.0rem; font-style: italic; font-weight:bold">The best choices for you!</h4>
                             <div class="navbar-collapse justify-content-end offcanvas-collapse" id="navbar-collapse">
                                 <div class="mb btn hamburger" data-target="#navbar-collapse"><i class="fal fa-times-circle"></i></div>
                                 {% if user.is_authenticated %}
@@ -70,7 +70,7 @@
                                         <li class="nav-item">
                                             <div class="select_header select_user clearfix">
                                                 <div class="dropdown">
-                                                    <a class="btn btn-default dropdown-toggle" href="" >{{user}}</a>
+                                                    <a class="btn btn-default dropdown-toggle" href="{% url 'profile'%}" >{{user}}</a>
                                                 </div>
                                             </div>
                                         </li>

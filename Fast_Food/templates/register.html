@@ -3,12 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Đăng nhập | KDC</title>
+	<title>Đăng ký | KDC</title>
 	<!-- Stylesheets -->
 	<link href="{% static 'loadimg/css/bootstrap.css' %}" rel="stylesheet">
 	<link href="{% static 'loadimg/css/main.css' %}" rel="stylesheet">
 	<link href="{% static 'loadimg/css/responsive.css' %}" rel="stylesheet">
-	<link rel="icon" href="{% static 'loadimg/img/logo.png' %}" type="image/x-icon">
+
 
 	<link
 		href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Titillium+Web:wght@300;400;600;700;900&display=swap"
@@ -24,7 +24,7 @@
 <body>
 	<div class="first-body">
 		<div class="logo">
-            <a href="index.html"><img src="{% static 'loadimg/img/logo.png' %}"/></a>
+            <a href="{%url 'home'%}"><img src="{% static 'loadimg/img/logo.png' %}"/></a>
 			
 		</div>
 		</div>  
@@ -53,6 +53,14 @@
 			<div class="form-group">
 				<label>Tên tài khoản</label>
 				{{form.username}}
+			</div>
+			<div class="form-group">
+				<label>Họ</label>
+				{{form.last_name}}
+			</div>
+			<div class="form-group">
+				<label>Tên</label>
+				{{form.first_name}}
 			</div>
 			<div class="form-group">
 				<label>Email</label>
