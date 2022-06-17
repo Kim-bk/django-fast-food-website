@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from loadimg.views import FoodView
 from django.shortcuts import redirect
+from .models import tbOrder
 
 from .form import CreateUserForm
 from .form import UpdateUserForm
@@ -49,3 +50,7 @@ def profile_view(request):
     form = UpdateUserForm(instance=request.user)
     context = {'form':form}
     return render(request,"profile.html",context)
+def orderview(request):
+    list_question = tbOrder.objects.all()
+    context = {"list_order":list_question}
+    return render(request,'accounts/order_user.html',context)

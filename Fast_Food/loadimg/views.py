@@ -13,9 +13,9 @@ class FoodNhom(View):
 class UuDai(View):
     def get(self,request):
         return render(request,'loadimg/MenuUuDai.html')
-def question(request):
+def home(request):
     list_question = tbFood.objects.filter(Id_Category = 1)
-    context = {"list_question":list_question}
+    context = {"list_home":list_question}
     return render(request,'loadimg/Combo1Nguoi.html',context)
 def question_nhom(request):
     list_question = tbFood.objects.filter(Id_Category = 2)
