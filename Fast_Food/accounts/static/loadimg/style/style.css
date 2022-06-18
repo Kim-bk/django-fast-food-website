@@ -55,18 +55,19 @@ a {
     font-size: 1.6rem;
     font-weight: 300;
     letter-spacing: 1.5px;
-    color: #1B8BCC;
+
+    color: #e7b33a;
     padding: 1.5rem 3rem;
     background-color: #fff;
     border-radius: 4rem;
-    border: 1px solid #1B8BCC;
+    border: 1px solid #e7b33a;
     cursor: pointer;
     transition: all 0.3s linear;
 }
 
 .btn.btn-secondary {
     color: white;
-    background-color: #1B8BCC; 
+    background-color: #e2a414d6;
 }
 
 .btn.btn-danger {
@@ -76,7 +77,7 @@ a {
 }
 
  .btn:hover {
-    background-color: #1B8BCC;
+    background-color: #e2a414d6;
     color: #fff;
 }
 
@@ -86,7 +87,7 @@ a {
 
 .btn.btn-secondary:hover {
     background-color: white;
-    color: #1B8BCC;
+    color: #e2a414d6;
 }
 
 .btn.btn-danger:hover {
@@ -1959,7 +1960,7 @@ select::-ms-expand {
     font-weight: 400;
     color: white;
     padding: 2rem;
-    background-color: #1B8BCC;
+    background-color: #e7b33a;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -1981,7 +1982,7 @@ select::-ms-expand {
 .subtotal p span {
     justify-content: space-between;
     margin-left: auto;
-    color: #1B8BCC;
+    color: #e7b33a;
 }
 
 .subtotal .btn.btn-secondary {
@@ -2058,7 +2059,7 @@ select::-ms-expand {
     display: inline-block;
     font-size: 1.4rem;
     font-weight: 300;
-    color: #1B8BCC;
+    color: #e7b33a;;
     margin-left: 2rem;
 }
 
@@ -2096,7 +2097,7 @@ select::-ms-expand {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    background-color: #1B8BCC;
+    background-color: #e6b239;
     color: white;
     font-size: 1.4rem;
 
@@ -2162,7 +2163,7 @@ select::-ms-expand {
 
 .order-total p span {
     font-size: 2.2rem;
-    color: #1B8BCC;
+    color: #e6b239;;
 }
 
 .order-detail > img {
