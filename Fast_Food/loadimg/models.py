@@ -9,7 +9,7 @@ class tbFood(models.Model):
     Description = models.TextField()
     Price = models.FloatField()
     Old_Price = models.FloatField()
-    Image = models.ImageField(upload_to = "")
+    Image = models.ImageField(upload_to = "img/")
     Quantity = models.IntegerField()
 
 class tbOrder(models.Model):
