@@ -112,24 +112,20 @@
             </div>
             <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-start">
                 <a class="navbar-brand" href="{% url 'home' %}">
-
                     <img class="pc" src="{% static 'loadimg/img/logo.png' %}">
                 </a>
-                <h4 style="margin-left:22%; font-size:2.0rem; font-style: italic; font-weight:bold">The best choices for you!</h4>
-              
-
+                <h4 style="margin-left:15%; font-size:2.0rem; font-style: italic; font-weight:bold">The best choices for you!</h4>
                 <div class="header-right row">
                     <div class="login-status">
                         <!-- <a href="./login.html"><i class="fa fa-user-alt account"></i></a> -->
                         <div class="row">
-                            <p style="padding-top:18px;">Chung</p>
-                            <img src="https://ui-avatars.com/api/?name=ch" alt="">
+                            <p style="padding-top:18px;">{{user}}</p>
+                                <img src="https://ui-avatars.com/api/?name={{user}}" alt="">
                             <div class="user-ctrl" style="padding-top:22px;">
                                 <i class="fa fa-caret-down"></i>
                                 <div class="user-dropdown">
-                                 
-                                    <a href="user.html">Infomation</a>
-                                    <p class="logout">Logout</p>
+                                    <a href="{%url 'change_password'%}">Đổi mật khẩu</a>
+                                    <a href="{%url 'logout'%}">Logout</a>
                                 </div>
                             </div>
                         </div>
@@ -142,8 +138,8 @@
         <div class="container-xl px-4 mt-4">
             <!-- Account page navigation-->
             <nav class="nav nav-borders">
-                <a class="nav-link  ms-0" href="user.html" target="__blank">Profile</a>
-                <a class="nav-link active ms-0" href="" target="__blank">Orders</a>
+                <a class="nav-link  ms-0" href="{% url 'profile'%}" target="__blank">Profile</a>
+                <a class="nav-link active ms-0" href="{%url 'orderview'%}" target="__blank">Orders</a>
             </nav>
             <hr class="mt-0 mb-4">
             <div class="row">
@@ -166,18 +162,20 @@
                                 <!-- loop in here -->
                              {% block content_order%}
                              {% for item in list_order %}
-                              <tr>
-                                <th scope="row">{{item.Id_Order}}</th>
-                                <td>{{item.Order_Date}}</td>
-                                <td>{{item.Phone_Number}}</td>
-                                <td>{{item.Address}}</td>
-                                {% if item.Static == "Đã Giao" %}
-                                    <td style="color: green">{{item.Static}}</td>
-                                {% else %}
-                                    <td style="color: red">{{item.Static}}</td>
-                                {% endif %}
-                                <td>{{item.Total_Bill}}</td>
-                              </tr>
+                                {% if item.Id_Account == user.id%}
+                                    <tr>
+                                        <th scope="row">{{item.Id_Order}}</th>
+                                        <td>{{item.Order_Date}}</td>
+                                        <td>{{item.Phone_Number}}</td>
+                                        <td>{{item.Address}}</td>
+                                        {% if item.Static == "Đã Giao" %}
+                                            <td style="color: green">{{item.Static}}</td>
+                                        {% else %}
+                                            <td style="color: red">{{item.Static}}</td>
+                                        {% endif %}
+                                        <td>{{item.Total_Bill}}</td>
+                                    </tr>
+                                {%endif%}
                             {% endfor %}
                             {%endblock%}
                             </tbody>
