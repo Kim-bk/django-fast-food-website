@@ -7,7 +7,7 @@
             <div class="nav-scroller">
                 <ul class="nav d-flex justify-content-start mb-0">
                     <li class="nav-item" id="headerMenuCate-14">
-                        <a href="{% url 'question' %}" class="nav-link"><span>Combo 1 Người</span></a>
+                        <a href="{% url 'home' %}" class="nav-link"><span>Combo 1 Người</span></a>
                     </li>
                     <li class="nav-item" id="headerMenuCate-15">
                         <a href="{% url 'question_nhom' %}" class="nav-link"><span>Combo Nhóm</span></a>
@@ -63,8 +63,8 @@
             <div class="kfc_menu_list pc">
                 <div class="row_sp">
                     <div class="row no-gutters">
-                        {% block content_question%}
-                        {% for item in list_question %}
+                        {% block content_home%}
+                        {% for item in list_home %}
                         <div class="col-6 col-lg-4">
                             <div class="card ">
                                 <div class="sp_slider">
