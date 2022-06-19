@@ -87,7 +87,7 @@ DATABASES = {
         'PASSWORD': "",
         'HOST':'localhost',
         'PORT':'',
-        #'OPTIONS':{"driver":"ODBC Driver 17 for SQL Server"},
+        'OPTIONS':{'sql_mode': 'traditional',},
     }
 }
 

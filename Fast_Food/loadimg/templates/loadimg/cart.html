@@ -1,0 +1,100 @@
+{%load static%}
+{%block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=z, initial-scale=1.0">
+    <title>Giỏ hàng | KDC</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'loadimg/style/reset.css' %}">
+    
+    <link rel = "icon" href = 
+    "{% static 'loadimg/img/logo.png' %}"
+   
+      type = "image/x-icon">
+    <!-- SLICK SLIDER -->
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <!-- STYLES -->
+    <link rel="stylesheet" href= "{% static 'loadimg/style/style_new.css' %}">
+   
+</head>
+
+<body>
+
+    <!-- CART -->
+    <section class="shopping-cart">
+        <div class="container row--base">
+            <div class="cart-container">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Món ăn</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tổng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for item in items%}
+                        <tr>
+                           
+                            <td>
+                                <h4>{{item.food.Food_Name}}</h4>
+                            </td>
+                            <td>{{item.food.Price|floatformat:3}}</td>
+                            <td>
+                                <div class="cart-quantity">
+                                    <i class="fa fa-chevron-down"></i>
+                                    <span>{{item.quantity}} </span>
+                                    <i class="fa fa-chevron-up"></i>
+                                </div>
+                            </td>
+                            <td>
+                                {{item.get_total|floatformat:3}}
+                            </td>
+                        </tr>
+                        {%endfor %}
+                    
+                    </tbody>
+                </table>
+                <div class="cart-container-ctrl row">
+                   <a href ="{%url 'question'%}"> <button class="btn">Quay lại trang chủ</button></a>
+                    
+                </div>
+            </div>
+            <div class="check-out">
+                <div class="order-summary">
+                    <h3>
+                        Tổng kết đơn đặt
+                    </h3>
+                    <div class="subtotal">
+                        <p class="row">Số món: {{order.get_cart_items}}<span></span></p>
+                        <p class="row">Tổng tiền: <span>  {{order.get_cart_total|floatformat:3}}</span></p>
+                        <a href="{% url 'checkout' %}">
+                        <button class="btn btn-secondary">
+                            Tiếp tục thanh toán
+                        </button>
+                    </a>
+                    </div>
+                </div>
+                <!-- <div class="payment-method">
+                    <h3>Payment Method</h3>
+                    <div class="method">
+                        <img src="./img/payment-method.png" alt="">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+{% endblock content %}
