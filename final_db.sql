@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2022 at 02:59 PM
+-- Generation Time: Jun 19, 2022 at 03:09 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -20,16 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `fastfood`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `accounts_tbaccount`
---
-
-CREATE TABLE `accounts_tbaccount` (
-  `id_account` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -162,9 +152,9 @@ CREATE TABLE `auth_user` (
 --
 
 INSERT INTO `auth_user` (`id`, `password`, `last_login`, `is_superuser`, `username`, `first_name`, `last_name`, `email`, `is_staff`, `is_active`, `date_joined`) VALUES
-(1, 'pbkdf2_sha256$320000$4pVKGt2MyeFA1I4j5UmgLY$W04YXMOfim97ZRJEp7aA/UuA2JmoBNTee/BUGLIbEtE=', '2022-06-19 12:38:13.049937', 1, 'kim', 'Kim', 'Nguyễn Hoàng', 'my-gmail@gmail.com', 1, 1, '2022-06-16 09:03:50.511287'),
+(1, 'pbkdf2_sha256$320000$4pVKGt2MyeFA1I4j5UmgLY$W04YXMOfim97ZRJEp7aA/UuA2JmoBNTee/BUGLIbEtE=', '2022-06-19 13:05:16.462921', 1, 'kim', 'Kim', 'Nguyễn Hoàng', 'my-gmail@gmail.com', 1, 1, '2022-06-16 09:03:50.511287'),
 (2, 'pbkdf2_sha256$320000$WYBocBBX1XkBOPy9LozZi5$iBbvipntgiZkgVbkrX3O0urNgdH+A47PxRChBe4nJu0=', '2022-06-19 12:02:13.518747', 0, 'trex', 'Kim', 'Nguyễn', 'nguyenhoangkim120201@gmail.com', 0, 1, '2022-06-19 11:32:22.146331'),
-(3, 'pbkdf2_sha256$320000$JhNOR9cOlbjubLHjtmBH9j$ipkBU5L9u/OGc1NN/Fm3cxp5bkzY5fh14pb8h7lf5yw=', '2022-06-19 12:38:32.347628', 0, 'chung', 'Chung', 'Hà Tiến', 'chung@gmail.com', 0, 1, '2022-06-19 11:57:37.452173');
+(3, 'pbkdf2_sha256$320000$JhNOR9cOlbjubLHjtmBH9j$ipkBU5L9u/OGc1NN/Fm3cxp5bkzY5fh14pb8h7lf5yw=', '2022-06-19 13:03:22.125514', 0, 'chung', 'Chung', 'Hà Tiến', 'chung@gmail.com', 0, 1, '2022-06-19 11:57:37.452173');
 
 -- --------------------------------------------------------
 
@@ -350,7 +340,7 @@ CREATE TABLE `django_session` (
 --
 
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
-('rm0keo8jisziuq2wzk8ain2d0wz35cz3', '.eJxVjMsOwiAQRf-FtSFQRh4u3fcbyMAMUjU0Ke3K-O_apAvd3nPOfYmI21rj1nmJE4mLMOL0uyXMD247oDu22yzz3NZlSnJX5EG7HGfi5_Vw_w4q9vqtUyGyxbEawAWFHgKEAMpRPhcVlEcDpN3gwRJ61qloNlkFZz2UZJDF-wPb3De5:1o2uCG:wMDPUT5BC_Zh7R10SoNJDVVC03BDM9B97JPdQhqcYXA', '2022-07-03 12:38:32.352636');
+('ou4zss1jcj8hd3xz4kd3o9hnhukf4aoo', '.eJxVjEEOwiAQRe_C2hAYEMSl-56hmYFBqgaS0q6MdzckXej2v_f-W8y4b2XeO6_zksRVaHH63Qjjk-sA6YH13mRsdVsXkkORB-1yaolft8P9OyjYy6gpgjPWX7TPrGK2OuUMwZJy1qgzxKhAO1QGCRwnCiETcbZJO2-BQXy-6AE4HQ:1o2uc8:j53STi6gONgC580Wusq5dg1YPMfRLAS6v6zNEKpqa4E', '2022-07-03 13:05:16.467920');
 
 -- --------------------------------------------------------
 
@@ -498,12 +488,6 @@ INSERT INTO `loadimg_tbshippingaddress` (`id`, `id_customer`, `address`, `city`,
 --
 
 --
--- Indexes for table `accounts_tbaccount`
---
-ALTER TABLE `accounts_tbaccount`
-  ADD PRIMARY KEY (`id_account`);
-
---
 -- Indexes for table `auth_group`
 --
 ALTER TABLE `auth_group`
@@ -612,12 +596,6 @@ ALTER TABLE `loadimg_tbshippingaddress`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `accounts_tbaccount`
---
-ALTER TABLE `accounts_tbaccount`
-  MODIFY `id_account` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `auth_group`
