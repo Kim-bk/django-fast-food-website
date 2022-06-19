@@ -36,7 +36,7 @@ function updateUserOrder(foodId, action){
     })
 
     .then((data) =>{
-        console.log('data:ádasd', data)
+        console.log('data:', data)
         location.reload()
     })
 }

@@ -41,6 +41,7 @@ def register_view(request):
     context = {'form':form}
     return render(request, 'register.html',context)
 
+
 def profile_view(request):
     if request.method =="POST":
         form = UpdateUserForm(request.POST,instance=request.user)
@@ -50,6 +51,7 @@ def profile_view(request):
     form = UpdateUserForm(instance=request.user)
     context = {'form':form}
     return render(request,"profile.html",context)
+    
 def orderview(request):
     list_question = tbOrder.objects.all()
     context = {"list_order":list_question}

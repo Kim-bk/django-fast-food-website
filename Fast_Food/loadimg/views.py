@@ -18,29 +18,72 @@ class UuDai(View):
         return render(request,'loadimg/MenuUuDai.html')
 
 def home(request):
-
     list_question = tbFood.objects.filter(Id_Category = 1)
-    context = {"list_home":list_question}
+    cartItems = []
+    if request.user.is_authenticated:
+        try:
+            account = User.objects.get(username = request.user)
+            order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
+            items = order.orderdetail.all()
+            cartItems = order.get_cart_items
+        except:
+            items =[]
+            order = {'get_cart_total': 0, 'get_cart_items': 0}
+    else:
+        items =[]
+        order = {'get_cart_total': 0, 'get_cart_items': 0}
+
+    context = {"list_home":list_question,'cartItems':cartItems}
     return render(request,'loadimg/Combo1Nguoi.html',context)
 
 def question_nhom(request):
     list_question = tbFood.objects.filter(Id_Category = 2)
-    context = {"list_nhom":list_question}
+    cartItems = []
+    if request.user.is_authenticated:
+        try:
+            account = User.objects.get(username = request.user)
+            order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
+            items = order.orderdetail.all()
+            cartItems = order.get_cart_items
+        except:
+            items =[]
+            order = {'get_cart_total': 0, 'get_cart_items': 0}
+    else:
+        items =[]
+        order = {'get_cart_total': 0, 'get_cart_items': 0}
+
+    context = {"list_nhom":list_question,'cartItems':cartItems}
     return render(request,'loadimg/ComboNhom.html',context)
+
 def question_uudai(request):
     list_question = tbFood.objects.filter(Id_Category = 3)
-    context = {"list_uudai":list_question}
+    cartItems = []
+    if request.user.is_authenticated:
+        try:
+            account = User.objects.get(username = request.user)
+            order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
+            items = order.orderdetail.all()
+            cartItems = order.get_cart_items
+        except:
+            items =[]
+            order = {'get_cart_total': 0, 'get_cart_items': 0}
+    else:
+        items =[]
+        order = {'get_cart_total': 0, 'get_cart_items': 0}
+
+    context = {"list_uudai":list_question,'cartItems':cartItems}
     return render(request,'loadimg/MenuUuDai.html',context)
 
 
 def cart(request):
     if request.user.is_authenticated:
-        account = User.objects.get(username = request.user)
-        customer = tbCustomer.objects.get(id_customer = account.id)
-        print(account)
-        print(customer.id_customer)
-        order, created = tbOrder.objects.get_or_create(id_account = customer.id_customer, complete=False)
-        items = order.orderdetail.all()
+        try:
+            account = User.objects.get(username = request.user)
+            order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
+            items = order.orderdetail.all()
+        except:
+            items =[]
+            order = {'get_cart_total': 0, 'get_cart_items': 0}
     else:
         items =[]
         order = {'get_cart_total': 0, 'get_cart_items': 0}
@@ -50,18 +93,18 @@ def cart(request):
 
 def checkout(request):
     if request.user.is_authenticated:
-        account = User.objects.get(username = request.user)
-        customer = tbCustomer.objects.get(id_customer = account.id)
-        print(account)
-        print(customer.id_customer)
-        order, created = tbOrder.objects.get_or_create(id_account = customer.id_customer, complete=False)
-        items = order.orderdetail.all()
+        try:
+            account = User.objects.get(username = request.user)
+            order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
+            items = order.orderdetail.all()
+        except:
+            items =[]
+            order = {'get_cart_total': 0, 'get_cart_items': 0}
     else:
         items =[]
         order = {'get_cart_total': 0, 'get_cart_items': 0}
     context = {"items":items, "order": order}
     return render(request,'loadimg/purchase.html',context)
-
 
 def updateItem(request):
     data = json.loads(request.body)
@@ -71,20 +114,54 @@ def updateItem(request):
     print('FoodId:', foodId)
     print('user_id:', request.user.id)
 
-    id_account = request.user.id
     food = tbFood.objects.get(Id_Food = foodId)
-    order, created = tbOrder.objects.get_or_create(Customer = id_account)
-    orrderDetail, created = tbOrderDetail.object.get_or_create(order = order, food = food)
+    account = User.objects.get(username = request.user)
+    order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
+   
+    orrderDetail, created = tbOrderDetail.objects.get_or_create(order = order, food = food)
 
     if action == 'add':
         orrderDetail.quantity = orrderDetail.quantity + 1
     if action == 'remove':
         orrderDetail.quantity = orrderDetail.quantity - 1
 
-    orrderDetail.save()
+    orrderDetail.save()  
 
     if orrderDetail.quantity <= 0:
         orrderDetail.delete()
 
     return  JsonResponse('Item was add', safe= False)
+
+
+from django.views.decorators.csrf import csrf_protect
+@csrf_protect
+def processOrder(request):
+    transaction_id = datetime.datetime.now().timestamp()
+    data = json.loads(request.body)
+    
+    if request.user.is_authenticated:
+        account = User.objects.get(username = request.user)
+        order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
+        total = float(data['form']['total'])
+        order.transaction_id = transaction_id
+
+        if total == float(order.get_cart_total):
+            order.complete = True
+        order.save()
+
+        tbShippingAddress.objects.create(
+        id_customer = customer.id_customer,
+        order=order,
+        address=data['shipping']['address'],
+        city=data['shipping']['city'],
+        phone_number = data['form']['phone'],
+        name =  data['shipping']['name'],
+        status='Đang giao',
+        total = total
+        )
+        print('success ... ')
+    else:
+        print('User is not logged in ... ')
+
+    return JsonResponse('Payment submitted..', safe=False)
 
