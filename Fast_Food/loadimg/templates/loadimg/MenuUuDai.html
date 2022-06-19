@@ -1,4 +1,4 @@
-{% extends 'base.html'%}
+{% extends 'loadimg/base.html'%}
 {% load static %}
 {% block content%}
 {% if user.is_authenticated %}
@@ -23,7 +23,11 @@
                         <a href="{% url 'home' %}" class="nav-link"><span>Combo 1 Người</span></a>
                     </li>
                     <li class="nav-item" id="headerMenuCate-15">
+<<<<<<< HEAD
                         <a href="{% url 'question_nhom' %}" class="nav-link"><span>Combo Nhóm</span></a>
+=======
+                        <a href="{% url 'question_nhom' %}" class="nav-link"><span>Combo Nh</span></a>
+>>>>>>> 73dd9f6845cc35eb332667f162f9ac892f41e645
                     </li>
                     <li class="nav-item" id="headerMenuCate-13">
                         <a href="{% url 'question_uudai' %}" class="nav-link"><span>Menu Ưu Đãi</span></a>
@@ -88,6 +92,7 @@
                         <h5 class="card-title"><span>{{item.Food_Name}}</span></h5>
                         <h6 class="card-price"><span>{{item.Price|floatformat:3}}<small>đ</small></span><em class="old_price">{{item.Old_Price|floatformat:3}}<small>đ</small></em></h6>
                             <div class="card-text">
+
                             <span>
                                 <ul>
                                     <li>{{item.Description}}</li>

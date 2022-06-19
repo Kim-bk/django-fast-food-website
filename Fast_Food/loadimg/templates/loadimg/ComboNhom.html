@@ -1,4 +1,4 @@
-{% extends 'base.html'%}
+{% extends 'loadimg/base.html'%}
 {% load static %}
 {% block content%}
 {% if user.is_authenticated %}
@@ -101,6 +101,7 @@
                         <h5 class="card-title"><span>{{item.Food_Name}}</span></h5>
                         <h6 class="card-price"><span>{{item.Price|floatformat:3}}<small>đ</small></span><em class="old_price">{{item.Old_Price|floatformat:3}}</em></small>đ</small></em></h6>
                             <div class="card-text">
+
                             <span>
                                 <ul>
                                     <li>{{item.Description}}</li>

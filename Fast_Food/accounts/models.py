@@ -9,7 +9,7 @@ class tbOrder(models.Model):
 
     Phone_Number = models.TextField()
     Address = models.TextField()
-    Static = models.TextField()
+    Status = models.TextField()
 
 class tbOrderDetail(models.Model):
     Id_Order = models.IntegerField(primary_key= True)
