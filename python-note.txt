@@ -1,9 +1,0 @@
-sửa model tbOrder id account thành id customer id order tự create
-transaction id can be null
-
-drop table loadimg_tbshippingaddress;
-drop table loadimg_tborderdetail;
-drop table loadimg_tborder;
-drop table loadimg_tbfood;
-drop table loadimg_tbcustomer;
-drop table loadimg_role;
