@@ -10,7 +10,7 @@
                         <a href="{% url 'home' %}" class="nav-link"><span>Combo 1 Người</span></a>
                     </li>
                     <li class="nav-item" id="headerMenuCate-15">
-                        <a href="{% url 'question_nhom' %}" class="nav-link"><span>Menu Ưu Đãi</span></a>
+                        <a href="{% url 'question_nhom' %}" class="nav-link"><span>Combo Nh</span></a>
                     </li>
                     <li class="nav-item" id="headerMenuCate-13">
                         <a href="{% url 'question_uudai' %}" class="nav-link"><span>Menu Ưu Đãi</span></a>
@@ -73,8 +73,8 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"><span>{{item.Food_Name}}</span></h5>
-                        <h6 class="card-price"><span>{{item.Price}}<small>đ</small></span><em class="old_price">{{item.Old_Price}}<small>đ</small></em></h6>
-                            <div class="card-text">
+                        <h6 class="card-price"><span>{{item.Price|floatformat:3}}<small>đ</small></span><em class="old_price">{{item.Old_Price|floatformat:3}}<small>đ</small></em></h6>
+                        <div class="card-text">
                             <span>
                                 <ul>
                                     <li>{{item.Description}}</li>
