@@ -1,3 +1,5 @@
+{%load static%}
+{%block content %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,9 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="static/loadimg/style/reset.css">
+    <link rel="stylesheet" href="{% static 'loadimg/style/reset.css' %}">
+    
     <link rel = "icon" href = 
-    "./static/loadimg/img/logo.png" 
+    "{% static 'loadimg/img/logo.png' %}"
+   
       type = "image/x-icon">
     <!-- SLICK SLIDER -->
     <!-- Add the slick-theme.css if you want default styling -->
@@ -19,11 +23,11 @@
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <!-- STYLES -->
-    <link rel="stylesheet" href="static/loadimg/style/style.css">
+    <link rel="stylesheet" href= "{% static 'loadimg/style/style_new.css' %}">
+   
 </head>
 
 <body>
-    
 
     <!-- CART -->
     <section class="shopping-cart">
@@ -40,68 +44,31 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {%for item in items%}
                         <tr>
-                            <td><img src="./img/book-1.jpg" alt=""></td>
+                           
                             <td>
-                                <h4>It e nghia map</h4>
-                                <p>Armani</p>
+                                <h4>{{item.food.Food_Name}}</h4>
                             </td>
-                            <td>$45.00</td>
+                            <td>{{item.food.Price|floatformat:3}}</td>
                             <td>
                                 <div class="cart-quantity">
                                     <i class="fa fa-chevron-down"></i>
-                                    <span>1</span>
+                                    <span>{{item.quantity}} </span>
                                     <i class="fa fa-chevron-up"></i>
                                 </div>
                             </td>
                             <td>
-                                $45.00
-                                <p class="cart-remove"><i class="fa fa-trash"></i> Xóa</p>
+                                {{item.get_total|floatformat:3}}
                             </td>
                         </tr>
-                        <tr>
-                            <td><img src="./img/book-2.jpg" alt=""></td>
-                            <td>
-                                <h4>It e nghia map</h4>
-                                <p>Armani</p>
-                            </td>
-                            <td>$45.00</td>
-                            <td>
-                                <div class="cart-quantity">
-                                    <i class="fa fa-chevron-down"></i>
-                                    <span>1</span>
-                                    <i class="fa fa-chevron-up"></i>
-                                </div>
-                            </td>
-                            <td>
-                                $45.00
-                                <p class="cart-remove"><i class="fa fa-trash"></i> Xóa</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><img src="./img/book-1.jpg" alt=""></td>
-                            <td>
-                                <h4>It e nghia map</h4>
-                                <p>Armani</p>
-                            </td>
-                            <td>$45.00</td>
-                            <td>
-                                <div class="cart-quantity">
-                                    <i class="fa fa-chevron-down"></i>
-                                    <span>1</span>
-                                    <i class="fa fa-chevron-up"></i>
-                                </div>
-                            </td>
-                            <td>
-                                $45.00
-                                <p class="cart-remove"><i class="fa fa-trash"></i> Xóa</p>
-                            </td>
-                        </tr>
+                        {%endfor %}
+                    
                     </tbody>
                 </table>
                 <div class="cart-container-ctrl row">
-                    <button class="btn">Quay lại trang chủ</button>
-                    <button class="btn btn-danger">Xóa tất cả</button>
+                   <a href ="{%url 'question'%}"> <button class="btn">Quay lại trang chủ</button></a>
+                    
                 </div>
             </div>
             <div class="check-out">
@@ -110,11 +77,13 @@
                         Tổng kết đơn đặt
                     </h3>
                     <div class="subtotal">
-                        <p class="row">Số món: <span>3</span></p>
-                        <p class="row">Tổng tiền: <span>$390.00</span></p>
+                        <p class="row">Số món: {{order.get_cart_items}}<span></span></p>
+                        <p class="row">Tổng tiền: <span>  {{order.get_cart_total|floatformat:3}}</span></p>
+                        <a href="{% url 'checkout' %}">
                         <button class="btn btn-secondary">
                             Tiếp tục thanh toán
                         </button>
+                    </a>
                     </div>
                 </div>
                 <!-- <div class="payment-method">
@@ -127,5 +96,5 @@
         </div>
     </section>
 </body>
-
 </html>
+{% endblock content %}

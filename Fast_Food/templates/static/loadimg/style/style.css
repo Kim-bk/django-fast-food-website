@@ -109,8 +109,8 @@ a {
 }
 
 .brand.processing {
-    border-color: #1B8BCC;
-    color: #1B8BCC;
+    border-color: #ecb40d;
+    color: #ecb40d;
 }
 
 .brand.preparing {
@@ -258,7 +258,7 @@ header.header-up {
 }
 
 .categories-item li a:hover {
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .header-search {
@@ -315,7 +315,7 @@ header.header-up {
     top: -0.5rem;
     right: 0;
     padding: 0.5rem 0.6rem;
-    background-color: #1B8BCC;
+    background-color: #ecb40d;
     color: white;
     border-radius: 50%;
     font-size: 1.2rem;
@@ -407,7 +407,7 @@ header.header-up {
 }
 
 .cart__item-quantity > .btn:hover {
-    border-color: #1B8BCC;
+    border-color: #ecb40d;
 }
 
 .cart__item-quantity > .btn:hover > i {
@@ -417,7 +417,7 @@ header.header-up {
 .cart__item-info > p {
     font-size: 2rem;
     font-weight: 300;
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .delete-cart__item > i{
@@ -434,7 +434,7 @@ header.header-up {
 
 .total > span {
     font-weight: 400;
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .cart__detail-ctrl  {
@@ -473,7 +473,7 @@ header.header-up {
 }
 
 .user-dropdown a {
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .user-dropdown::before {
@@ -501,7 +501,7 @@ header.header-up {
 }
 
 .user-dropdown .logout {
-    color: #1B8BCC;
+    color: #ecb40d;
     font-weight: 300;
     margin-top: 1rem;
     cursor: pointer;
@@ -530,7 +530,7 @@ header.header-up {
     display: inline-block;
     font-size: 2.5rem;
     font-weight: 300;
-    color: #1B8BCC;
+    color: #ecb40d;
     padding-bottom: 3rem;
 }
 
@@ -540,7 +540,7 @@ header.header-up {
 }
 
 .carousel-content p > span {
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .carousel-content .deal {
@@ -555,7 +555,7 @@ header.header-up {
 
     padding: 2rem 5rem;
     border-radius: 5rem;
-    background: #1B8BCC;
+    background: #ecb40d;
 }
 
 /* ----CUSTOM SLICK SLIDER--- */
@@ -580,7 +580,7 @@ header.header-up {
 }
 
 .slick-dots li.slick-active button { 
-    background-color: #1B8BCC;
+    background-color: #ecb40d;
 }
 
 .slick-dots li button::before{
@@ -612,7 +612,7 @@ header.header-up {
 
 .slick-next i, .slick-prev i {
     font-size: 2rem;
-    color: #1B8BCC;
+    color: #ecb40d;
     line-height: 5rem;
     
 }
@@ -660,14 +660,14 @@ header.header-up {
 
 .advantages-desc h5 {
     font-size: 1.8rem;
-    color: #1B8BCC;
+    color: #ecb40d;
     margin-bottom: 1rem;
 }
 
 .advantages-desc p {
     font-size: 1.3rem;
     letter-spacing: 1px;
-    color: #1B8BCC;
+    color: #ecb40d;
     font-weight: 300;
 }
 
@@ -690,7 +690,7 @@ header.header-up {
 .best-sell-header a {
     text-decoration: none;
     font-size: 1.6rem;
-    color: #1B8BCC;
+    color: #ecb40d;
     cursor: pointer;
     transition: all 0.3s linear;
 }
@@ -744,7 +744,7 @@ header.header-up {
 
     font-size: 1.6rem;
     color: white;
-    background-color: #1B8BCC;
+    background-color: #ecb40d;
 
     transform: rotate(-40deg);
 }
@@ -795,7 +795,7 @@ header.header-up {
 }
 
 .add-to-cart, .quick-view {
-    background-color: #1B8BCC;
+    background-color: #ecb40d;
     width: 4rem;
     height: 4rem;
     border: 0;
@@ -1027,7 +1027,7 @@ header.header-up {
 }
 
 .bookshelves-item ul li:hover {
-    border-color: #1B8BCC;
+    border-color: #ecb40d;
 }
 
 .bookshelves-item ul li img {
@@ -1046,7 +1046,7 @@ header.header-up {
 
 .bookshelves-item-content p {
     font-size: 1.6rem;
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 
@@ -1075,21 +1075,21 @@ header.header-up {
 
 .collection-item .number {
     font-size: 3.5rem;
-    color: #1B8BCC;
+    color: #ecb40d;
     margin-bottom: 1.5rem;
 }
 
 .collection-item .caption {
     font-size: 1.8rem;
     font-weight: 300;
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 
 /* -----------------------------------------FOOTER---------------------------------- */
 .footer {
     margin-top: 4rem;
-    background-color: #1B8BCC;
+    background-color: #ecb40d;
     padding-bottom: 4rem;
 }
 
@@ -1099,7 +1099,7 @@ header.header-up {
     background-size: cover;
     position: relative;
     padding: 4rem;
-    border: 1px solid #1B8BCC;
+    border: 1px solid #ecb40d;
     border-radius: 1.5rem;
     transform: translateY(-50%);
     overflow: hidden;
@@ -1208,7 +1208,7 @@ select::-ms-expand {
     width: 2.5rem;
     height: 2.5rem;
     background-color: #fff;
-    color: #1B8BCC;
+    color: #ecb40d;
     border-radius: 50%;
     text-align: center;
     line-height: 2.5rem;
@@ -1237,7 +1237,7 @@ select::-ms-expand {
 
 .book__item--image {
     display: block;
-    box-shadow: 0px 0px 10px #1B8BCC;
+    box-shadow: 0px 0px 10px #ecb40d;
     margin-right: 30px
 }
 
@@ -1259,7 +1259,7 @@ select::-ms-expand {
 
 .book__item--detail .price {
     font-size: 2.6rem;
-    color: #1B8BCC;
+    color: #ecb40d;
     margin-bottom: 30px;
 }
 
@@ -1326,13 +1326,13 @@ select::-ms-expand {
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-size: 1.4rem;
-    box-shadow: 0 0 7px #1B8BCC;
+    box-shadow: 0 0 7px #ecb40d;
     margin-left: 20px;
 }
 
 .ctrl--add-to-cart.btn:hover, .ctrl--add-to-cart.btn:active {
     background-color: white;
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .social__list {
@@ -1432,12 +1432,12 @@ select::-ms-expand {
 }
 
 .book-related__info a:hover {
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .book-related__info p {
     font-size: 18px;
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 /* -------------------------------SEARCH----------------------------- */
@@ -1453,7 +1453,7 @@ select::-ms-expand {
 }
 
 .search h3 span {
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .search-result {
@@ -1504,7 +1504,7 @@ select::-ms-expand {
 }
 
 .form-header .switch-link {
-    color: #1B8BCC;
+    color: #ecb40d;
     font-size: 16px;
     padding-right: 10px;
 }
@@ -1560,7 +1560,7 @@ select::-ms-expand {
     height: 6rem;
     border-radius: 50%;
     margin: 2rem auto;
-    background-color: #1B8BCC;
+    background-color: #ecb40d;
     text-align: center;
 }
 
@@ -1580,7 +1580,7 @@ select::-ms-expand {
 .respond a {
     display: inline-block;
     font-size: 1.4rem;
-    color: #1B8BCC;
+    color: #ecb40d;
     font-weight: 500;
 
     padding: 1.5rem 0 2rem;
@@ -1639,7 +1639,7 @@ select::-ms-expand {
 .user-infor-left__header p {
     font-size: 1.6rem;
     font-weight: 500;
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .user-ctrl {
@@ -1666,15 +1666,15 @@ select::-ms-expand {
 }
 
 .user-ctrl__item.active {
-    background-color: #1B8BCC;
+    background-color: #ecb40d;
     color: white;
-    border-color: #1B8BCC;
+    border-color: #ecb40d;
 }
 
 .user-ctrl__item:hover {
-    background-color: #1B8BCC;
+    background-color: #ecb40d;
     color: white;
-    border-color: #1B8BCC;
+    border-color: #ecb40d;
 }
 
 .user-infor-right {
@@ -1702,7 +1702,7 @@ select::-ms-expand {
 .user-infor-detail__item > p {
     font-size: 1.6rem;
     font-weight: 500;
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .user-infor-detail__item > span {
@@ -1754,7 +1754,7 @@ select::-ms-expand {
 }
 
 .tab-order-item-id {
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .tab-order-item .btn {
@@ -1815,7 +1815,7 @@ select::-ms-expand {
 .modal-user-infor.open .form-container.modal .modal-header h2 {
     font-size: 2.2rem;
     font-weight: 500;
-    color: #1B8BCC;
+    color: #ecb40d;
     margin-bottom: 3rem;
 }
 
@@ -1947,7 +1947,7 @@ select::-ms-expand {
 }
 
 .cart-remove:hover {
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .check-out {
@@ -2425,8 +2425,8 @@ select::-ms-expand {
 }
 
 .data__item:hover .brand.processing {
-    border-color: #1B8BCC;
-    background-color: #1B8BCC;
+    border-color: #ecb40d;
+    background-color: #ecb40d;
     color: white;
 }
 
@@ -2498,7 +2498,7 @@ select::-ms-expand {
 }
 
 .order-header > p:first-child {
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 .order-info__item {
@@ -2588,7 +2588,7 @@ select::-ms-expand {
 }
 
 .goods-info a {
-    color: #1B8BCC;
+    color: #ecb40d;
 }
 
 
@@ -2605,7 +2605,7 @@ select::-ms-expand {
 }
 
 .order-finalization > .row--base > span {
-    color: #1B8BCC;
+    color: #ecb40d;
     text-align: left;
     margin-left: 10%;
 }
@@ -2683,6 +2683,6 @@ select::-ms-expand {
 }
 
 .order-status-right .row:last-child .dot {
-    background-color: #1B8BCC;
+    background-color: #ecb40d;
 }
 
