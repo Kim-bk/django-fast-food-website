@@ -1,6 +1,19 @@
 {% extends 'loadimg/base.html'%}
 {% load static %}
 {% block content%}
+{% if user.is_authenticated %}
+<div class="cart_box" id="cartBox">
+    <div class="dropdown">
+        <a class="btn dropdown-toggle" href="{%url 'cart'%}">
+            <span class="icon">
+                <span class="number" id="cartQty">{{cartItems}}</span>
+            </span>
+            <span class="text">Giỏ hàng</span>
+            <span class="card-price" id="cartTotal"></span>
+        </a>
+    </div>
+</div>
+{% endif %}
 <div class="row_main">
     <div id="sidebar" class="sidebar wap_nav_scroller">
         <div class="sidebar__inner wap_nav_fix">
@@ -86,8 +99,9 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"><span>{{item.Food_Name}}</span></h5>
-                        <h6 class="card-price"><span>{{item.Price|floatformat:3}}<small>đ</small></span><em class="old_price">{{item.Old_Price|floatformat:3}}<small>đ</small></em></h6>
-                        <div class="card-text">
+                        <h6 class="card-price"><span>{{item.Price|floatformat:3}}<small>đ</small></span><em class="old_price">{{item.Old_Price|floatformat:3}}</em></small>đ</small></em></h6>
+                            <div class="card-text">
+
                             <span>
                                 <ul>
                                     <li>{{item.Description}}</li>
@@ -98,10 +112,10 @@
                             <div class="row_btn">
                                 <div class="row no-gutters">
                                     <div class="col order-lg-1">
-                                            <a href="javascript:void(0);" class="button btn_custom" onclick="checkBeforeCustomizeCombo('https://kfcvietnam.com.vn/vi/chi-tiet-thuc-don/100/combo-ga-ran-a.html');"><span>Tùy chỉnh</span></a>
+                                            <a href="javascript:void(0);" class="button btn_custom"><span>Tùy chỉnh</span></a>
                                     </div>  
                                     <div class="col order-lg-2">
-                                        <a href="javascript:void(0);" class="button btn_add" onclick="addDefaultToCart(100,1);"><span>Đặt hàng</span></a>
+                                        <button data-product="{{item.Id_Food}}" data-action="add" class="button btn_add update_cart" style="width:100%">Đặt hàng</button>
                                     </div>                                                             
                                 </div>
                             </div>

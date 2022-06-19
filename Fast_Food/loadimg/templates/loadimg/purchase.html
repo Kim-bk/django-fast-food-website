@@ -23,39 +23,43 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <!-- STYLES -->
     <link rel="stylesheet" href= "{% static 'loadimg/style/style_new.css' %}">
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 
 <body>
     <section class="purchase row--base">
         <div class="order-info">
-        
+            <form name="myform" id="myform">
+                {% csrf_token %}
             <div class="order-info__item">
                 <p>Thông tin liên hệ</p>
-                <input type="text" placeholder="Số điện thoại">
+                <input type="text" name="phone" placeholder="Số điện thoại">
             </div>
             <div class="order-info__item">
                 <p>Địa chỉ giao hàng</p>
-                <input type="text" placeholder="Họ và tên">
-                <input type="text" placeholder="Địa chỉ">
-                <input type="text" placeholder="Thành phố">
+                <input type="text" name="name" placeholder="Họ và tên">
+                <input type="text" name="address" placeholder="Địa chỉ">
+                <input type="text" name="city" placeholder="Thành phố">
             </div>
             <div class="order-ctrl">
-                <button class="btn btn-secondary" type="submit">
+                <button class="btn btn-secondary" type="submit" onclick="submitFormData()">
                     Thanh toán 
                 </button>
                 <a href="{%url 'cart'%}">Trở về giỏ hàng</a>
             </div>
-
+        </form>
         </div>
+    
       
         <div class="order-detail">
             {%for item in items%}
             <div class="order__list">
                 <div class="order__item row">
                     <div class="order__item-img">
-                        
+                        <img src="/static/loadimg/{{item.food.Image}}" />
+                    </div>
+                    <div class="order__item-img">
                         <span>{{item.quantity}}</span>
                     </div>
                     <h3>{{item.food.Food_Name}}</h3>
@@ -77,6 +81,63 @@
         </div>
     </section>
 </body>
+
+<script type="text/javascript">
+    var form = document.getElementById('myform')
+		form.addEventListener('submit', function(e){
+	    	e.preventDefault()
+	    })
+    
+    var csrftoken = form.getElementsByTagName("input")[0].value
+    console.log('Newtoken:', csrftoken)
+    
+    function submitFormData(){
+        var total = '{{order.get_cart_total}}'
+
+        var userFormData = {
+            'phone':null,
+            'total':total,
+        }
+
+        var shippingInfo = {
+            'name':null,
+            'address':null,
+            'city':null,
+        }
+
+        userFormData.phone = form.phone.value;
+        shippingInfo.address = form.address.value;
+        shippingInfo.city = form.city.value;
+        shippingInfo.name = form.name.value;
+
+        console.log('Shipping Info:', shippingInfo)
+        console.log('User Info:', userFormData)
+
+        var url = "/process_order/"
+        fetch(url, {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+                'X-CSRFToken':csrftoken,
+            }, 
+            body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+            
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+            alert('Transaction completed');  
+
+            cart = {}
+            document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+            window.location.href = "{%url 'home'%}"
+
+            })
+    }
+    console.log('Payment button clicked')
+</script>
+
+
 
 </html>
 
