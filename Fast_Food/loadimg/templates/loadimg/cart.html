@@ -24,7 +24,25 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <!-- STYLES -->
     <link rel="stylesheet" href= "{% static 'loadimg/style/style_new.css' %}">
-   
+    <script type="text/javascript"> 
+        var user = '{{request.user}}' 
+        function getToken(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+        }
+        const csrftoken = getToken('csrftoken');
+        </script>
 </head>
 
 <body>
@@ -36,7 +54,6 @@
                 <table class="cart-table">
                     <thead>
                         <tr>
-                            <th></th>
                             <th>Món ăn</th>
                             <th>Giá</th>
                             <th>Số lượng</th>
@@ -46,16 +63,15 @@
                     <tbody>
                         {%for item in items%}
                         <tr>
-                           
                             <td>
                                 <h4>{{item.food.Food_Name}}</h4>
                             </td>
                             <td>{{item.food.Price|floatformat:3}}</td>
                             <td>
                                 <div class="cart-quantity">
-                                    <i class="fa fa-chevron-down"></i>
+                                    <i data-product="{{item.food.Id_Food}}" data-action="remove" class="fa fa-chevron-down update_cart"></i>
                                     <span>{{item.quantity}} </span>
-                                    <i class="fa fa-chevron-up"></i>
+                                    <i data-product="{{item.food.Id_Food}}" data-action="add" class="fa fa-chevron-up update_cart"></i>
                                 </div>
                             </td>
                             <td>
@@ -63,11 +79,10 @@
                             </td>
                         </tr>
                         {%endfor %}
-                    
                     </tbody>
                 </table>
                 <div class="cart-container-ctrl row">
-                   <a href ="{%url 'question'%}"> <button class="btn">Quay lại trang chủ</button></a>
+                   <a href ="{%url 'home'%}"> <button class="btn">Quay lại trang chủ</button></a>
                     
                 </div>
             </div>
@@ -96,5 +111,6 @@
         </div>
     </section>
 </body>
+<script type="text/javascript" src="{% static 'loadimg/js/cart_new.js' %}"></script>
 </html>
 {% endblock content %}

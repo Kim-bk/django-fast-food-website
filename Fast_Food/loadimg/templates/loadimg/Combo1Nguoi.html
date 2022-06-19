@@ -1,6 +1,19 @@
-{% extends 'base.html'%}
+{% extends 'loadimg/base.html'%}
 {% load static %}
 {% block content%}
+{% if user.is_authenticated %}
+<div class="cart_box" id="cartBox">
+    <div class="dropdown">
+        <a class="btn dropdown-toggle" href="{%url 'cart'%}">
+            <span class="icon">
+                <span class="number" id="cartQty">{{cartItems}}</span>
+            </span>
+            <span class="text">Giỏ hàng</span>
+            <span class="card-price" id="cartTotal"></span>
+        </a>
+    </div>
+</div>
+{% endif %}
 <div class="row_main">
     <div id="sidebar" class="sidebar wap_nav_scroller">
         <div class="sidebar__inner wap_nav_fix">

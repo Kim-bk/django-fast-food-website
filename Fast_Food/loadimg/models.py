@@ -16,19 +16,9 @@ class tbFood(models.Model):
     Image = models.ImageField(upload_to = "")
     Quantity = models.IntegerField()
 
-
-class tbCustomer(models.Model):
-    id_customer = models.IntegerField(primary_key= True)
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200, null=True)
-    email = models.CharField(max_length=200)
-    
-    def __str__(self):
-        return self.name
-
 class tbOrder(models.Model):
-    id_order = models.IntegerField(primary_key= True)
-    id_account =  models.IntegerField()
+    id_order = models.AutoField(primary_key= True)
+    id_customer =  models.IntegerField()
     date_ordered = models.DateTimeField(auto_now_add=True)
     complete = models.BooleanField(default=False)
     transaction_id = models.CharField(max_length=100, null=True)
@@ -48,6 +38,15 @@ class tbOrder(models.Model):
         orderitems = self.orderdetail.all()
         total = sum([item.quantity for item in orderitems])
         return total 
+            
+    @property
+    def shipping(self):
+        shipping = False
+        orderitems = self.orderitem_set.all()
+        for i in orderitems:
+            if i.product.digital == False:
+                shipping = True
+        return shipping
 
 class tbOrderDetail(models.Model):
     food = models.ForeignKey(tbFood, on_delete=models.SET_NULL, null=True,blank=True)
@@ -67,8 +66,9 @@ class tbShippingAddress(models.Model):
     city = models.CharField(max_length=200, null=False)
     status = models.CharField(max_length=200, null=False)
     date_added = models.DateTimeField(auto_now_add=True)
-    phone_number = models.TextField()
-    total = models.FloatField()
+    phone_number = models.TextField( null=True, blank=True)
+    name = models.TextField( null=True, blank=True)
+    total = models.FloatField( null=True, blank=True)
 
     def __str__(self):
         return self.address
