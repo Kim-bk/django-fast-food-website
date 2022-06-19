@@ -75,6 +75,12 @@ def question_uudai(request):
     return render(request,'loadimg/MenuUuDai.html',context)
 
 
+def orderview(request):
+    list_question = tbShippingAddress.objects.all()
+    context = {"list_order":list_question}
+    return render(request,'loadimg/order_user.html',context)
+
+
 def cart(request):
     if request.user.is_authenticated:
         try:
@@ -150,7 +156,7 @@ def processOrder(request):
         order.save()
 
         tbShippingAddress.objects.create(
-        id_customer = customer.id_customer,
+        id_customer = account.id,
         order=order,
         address=data['shipping']['address'],
         city=data['shipping']['city'],

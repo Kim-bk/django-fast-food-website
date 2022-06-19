@@ -84,10 +84,6 @@
 
 <script type="text/javascript">
     var form = document.getElementById('myform')
-		form.addEventListener('submit', function(e){
-	    	e.preventDefault()
-	    })
-    
     var csrftoken = form.getElementsByTagName("input")[0].value
     console.log('Newtoken:', csrftoken)
     
@@ -131,7 +127,6 @@
             cart = {}
             document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
             window.location.href = "{%url 'home'%}"
-
             })
     }
     console.log('Payment button clicked')
