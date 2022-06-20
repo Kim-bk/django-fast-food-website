@@ -24,13 +24,10 @@ def home(request):
         try:
             account = User.objects.get(username = request.user)
             order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
-            items = order.orderdetail.all()
             cartItems = order.get_cart_items
         except:
-            items =[]
             order = {'get_cart_total': 0, 'get_cart_items': 0}
     else:
-        items =[]
         order = {'get_cart_total': 0, 'get_cart_items': 0}
 
     context = {"list_home":list_question,'cartItems':cartItems}
@@ -43,13 +40,10 @@ def question_nhom(request):
         try:
             account = User.objects.get(username = request.user)
             order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
-            items = order.orderdetail.all()
             cartItems = order.get_cart_items
         except:
-            items =[]
             order = {'get_cart_total': 0, 'get_cart_items': 0}
     else:
-        items =[]
         order = {'get_cart_total': 0, 'get_cart_items': 0}
 
     context = {"list_nhom":list_question,'cartItems':cartItems}
@@ -62,13 +56,10 @@ def question_uudai(request):
         try:
             account = User.objects.get(username = request.user)
             order, created = tbOrder.objects.get_or_create(id_customer = account.id, complete=False)
-            items = order.orderdetail.all()
             cartItems = order.get_cart_items
         except:
-            items =[]
             order = {'get_cart_total': 0, 'get_cart_items': 0}
     else:
-        items =[]
         order = {'get_cart_total': 0, 'get_cart_items': 0}
 
     context = {"list_uudai":list_question,'cartItems':cartItems}
