@@ -18,7 +18,6 @@ for ( i = 0; i < updateBtns.length; i++)
     })
 }
 
-
 function updateUserOrder(foodId, action){
     console.log('User iss logged in, send data...')
     var url = '/update_item/'
